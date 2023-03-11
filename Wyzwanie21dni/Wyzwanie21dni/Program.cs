@@ -1,5 +1,123 @@
-﻿var number1 = 11;
-var number2 = 10;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+int[] grades = new int[365];
+
+List<string> dayOfWeek = new List<string>();
+
+dayOfWeek.Add("Poniedziałek");
+dayOfWeek.Add("Wtorek");
+dayOfWeek.Add("Środa");
+dayOfWeek.Add("Czwartek");
+dayOfWeek.Add("Piątek");
+dayOfWeek.Add("Sobota");
+dayOfWeek.Add("Niedziela");
+//Console.WriteLine(dayOfWeek[2]);
+
+//string[] dayOfWeek2 = { "", "", "", "srdoa", "", "", "" };
+//Console.WriteLine(dayOfWeek2[3]);
+
+
+var number = Console.ReadLine();
+string numberInStirng = number.ToString();
+char[] letters = numberInStirng.ToCharArray();
+
+var number0 = 0;
+var number1 = 0;
+var number2 = 0;
+var number3 = 0;
+var number4 = 0;
+var number5 = 0;
+var number6 = 0;
+var number7 = 0;
+var number8 = 0;
+var number9 = 0;
+foreach (char c in letters)
+{
+    if (c == '0') { number0++; }
+    if (c == '1') { number1++; }
+    if (c == '2') { number2++; }
+    if (c == '3') { number3++; }
+    if (c == '4') { number4++; }
+    if (c == '5') { number5++; }
+    if (c == '6') { number6++; }
+    if (c == '7') { number7++; }
+    if (c == '8') { number8++; }
+    if (c == '9') { number9++; }
+    Console.WriteLine(number4);
+}
+Console.WriteLine("0 => " + number0);
+Console.WriteLine("1 => " + number1);
+Console.WriteLine("2 => " + number2);
+Console.WriteLine("3 => " + number3);
+Console.WriteLine("4 => " + number4);
+Console.WriteLine("5 => " + number5);
+Console.WriteLine("6 => " + number6);
+Console.WriteLine("7 => " + number7);
+Console.WriteLine("8 => " + number8);
+Console.WriteLine("9 => " + number9);
+
+
+
+//foreach (var day in dayOfWeek)
+//{
+//    Console.WriteLine(day);
+//}
+
+
+
+//for (int i=0; i<dayOfWeek.Count; i=i+2)
+//{
+//    Console.WriteLine(dayOfWeek[i]);
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var number1 = 11;
+//var number2 = 10;
 
 // ==
 // !=
@@ -8,34 +126,34 @@ var number2 = 10;
 // <=
 // >=
 
-var name = "Damian";
-var plec = "Mężczyzna";
-var age = 15;
+//var name = "Damian";
+//var plec = "Mężczyzna";
+//var age = 15;
 
-bool isActive = true;
+//bool isActive = true;
 
-if (plec == "Kobieta" && age < 30)
-{
-    Console.WriteLine("Kobieta poniżej 30 lat");
-}
+//if (plec == "Kobieta" && age < 30)
+//{
+//   Console.WriteLine("Kobieta poniżej 30 lat");
+//}
+//
+//else if (name == "Ewa")
+//{
+//    Console.WriteLine(name);
+//    if (age == 33)
+//    {
+//       Console.WriteLine(", lat " + age);
+//    }
 
-else if (name == "Ewa")
-{
-    Console.WriteLine(name);
-    if (age == 33)
-    {
-        Console.WriteLine(", lat " + age);
-    }
-
-}
-else if (age < 18)
-{
-    Console.Write("Niepłnoletni");
-    if (!(plec == "Kobieta"))
-    {
-        Console.Write(" Mężczyzna");
-    }
-}
+//}
+//else if (age < 18)
+//{
+//    Console.Write("Niepłnoletni");
+//    if (!(plec == "Kobieta"))
+//    {
+//        Console.Write(" Mężczyzna");
+//    }
+//}
 
 // &&
 // ||
