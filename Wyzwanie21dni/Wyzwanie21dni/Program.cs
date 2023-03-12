@@ -1,60 +1,206 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using Wyzwanie21dni;
 
-int[] grades = new int[365];
+//User user1 = new User("Damian","111");
+//User user2 = new User("Ewa", "111");
+//User user3 = new User("Zuzia", "111");
+//User user4 = new User("Adam", "111");
+//User user5 = new User("Karol", "111");
+//User user6 = new User("Tadeusz", "111");
+Employee Employee1 = new Employee("Damian", "dz", "21");
+Employee Employee2 = new Employee("Damian", "dz", "22");
+Employee Employee3 = new Employee("Damian", "dz", "33");
+Employee1.AddScore(5);
+Employee1.AddScore(2);
+Employee1.AddScore(3);
+Employee1.AddScore(4);
+Employee1.AddScore(5);
+Employee2.AddScore(5);
+Employee2.AddScore(1);
+Employee2.AddScore(2);
+Employee2.AddScore(1);
+Employee2.AddScore(1);
+Employee3.AddScore(2);
+Employee3.AddScore(2);
+Employee3.AddScore(2);
+Employee3.AddScore(2);
+Employee3.AddScore(7);
 
-List<string> dayOfWeek = new List<string>();
+var resultUser1 = Employee1.Result;
+var resultUser2 = Employee2.Result;
+var resultUser3 = Employee3.Result;
+//Console.WriteLine(resultUser1);
+//Console.WriteLine(resultUser2);
+//Console.WriteLine(resultUser3);
+Console.WriteLine("Największy wynik miał pan/pani");
 
-dayOfWeek.Add("Poniedziałek");
-dayOfWeek.Add("Wtorek");
-dayOfWeek.Add("Środa");
-dayOfWeek.Add("Czwartek");
-dayOfWeek.Add("Piątek");
-dayOfWeek.Add("Sobota");
-dayOfWeek.Add("Niedziela");
+if (Employee1.Result > Employee2.Result && Employee1.Result > Employee3.Result)
+{
+    Console.WriteLine("Imie " + Employee1.name);
+    Console.WriteLine("Nazwisko " + Employee1.surname);
+    Console.WriteLine("Lat: " + Employee1.wiek);
+    Console.WriteLine(resultUser1);
+}
+
+if (Employee2.Result > Employee1.Result && Employee2.Result > Employee3.Result)
+{
+    Console.WriteLine("Imie " + Employee2.name);
+    Console.WriteLine("Nazwisko " + Employee2.surname);
+    Console.WriteLine("Lat: " + Employee2.wiek);
+    Console.WriteLine(resultUser2);
+}
+
+if (Employee3.Result > Employee2.Result && Employee3.Result > Employee1.Result)
+{
+    Console.WriteLine("Imie " + Employee3.name);
+    Console.WriteLine("Nazwisko " + Employee3.surname);
+    Console.WriteLine("Lat: " + Employee3.wiek);
+    Console.WriteLine(resultUser3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//user1.AddScore(5);
+//user1.AddScore(6);
+//var result = user1.Result;
+//Console.WriteLine(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//using static System.Runtime.InteropServices.JavaScript.JSType;
+
+//int[] grades = new int[365];
+
+//List<string> dayOfWeek = new List<string>();
+
+//dayOfWeek.Add("Poniedziałek");
+//dayOfWeek.Add("Wtorek");
+//dayOfWeek.Add("Środa");
+//dayOfWeek.Add("Czwartek");
+//dayOfWeek.Add("Piątek");
+//dayOfWeek.Add("Sobota");
+//dayOfWeek.Add("Niedziela");
 //Console.WriteLine(dayOfWeek[2]);
 
 //string[] dayOfWeek2 = { "", "", "", "srdoa", "", "", "" };
 //Console.WriteLine(dayOfWeek2[3]);
 
 
-var number = Console.ReadLine();
-string numberInStirng = number.ToString();
-char[] letters = numberInStirng.ToCharArray();
+//var number = Console.ReadLine();
+//string numberInStirng = number.ToString();
+//char[] letters = numberInStirng.ToCharArray();
 
-var number0 = 0;
-var number1 = 0;
-var number2 = 0;
-var number3 = 0;
-var number4 = 0;
-var number5 = 0;
-var number6 = 0;
-var number7 = 0;
-var number8 = 0;
-var number9 = 0;
-foreach (char c in letters)
-{
-    if (c == '0') { number0++; }
-    if (c == '1') { number1++; }
-    if (c == '2') { number2++; }
-    if (c == '3') { number3++; }
-    if (c == '4') { number4++; }
-    if (c == '5') { number5++; }
-    if (c == '6') { number6++; }
-    if (c == '7') { number7++; }
-    if (c == '8') { number8++; }
-    if (c == '9') { number9++; }
-    Console.WriteLine(number4);
-}
-Console.WriteLine("0 => " + number0);
-Console.WriteLine("1 => " + number1);
-Console.WriteLine("2 => " + number2);
-Console.WriteLine("3 => " + number3);
-Console.WriteLine("4 => " + number4);
-Console.WriteLine("5 => " + number5);
-Console.WriteLine("6 => " + number6);
-Console.WriteLine("7 => " + number7);
-Console.WriteLine("8 => " + number8);
-Console.WriteLine("9 => " + number9);
+//var number0 = 0;
+//var number1 = 0;
+//var number2 = 0;
+//var number3 = 0;
+//var number4 = 0;
+//var number5 = 0;
+//var number6 = 0;
+//var number7 = 0;
+//var number8 = 0;
+//var number9 = 0;
+//foreach (char c in letters)
+//{
+//    if (c == '0') { number0++; }
+//    if (c == '1') { number1++; }
+//    if (c == '2') { number2++; }
+//    if (c == '3') { number3++; }
+//    if (c == '4') { number4++; }
+//    if (c == '5') { number5++; }
+//    if (c == '6') { number6++; }
+//    if (c == '7') { number7++; }
+//    if (c == '8') { number8++; }
+//    if (c == '9') { number9++; }
+//    Console.WriteLine(number4);
+//}
+//Console.WriteLine("0 => " + number0);
+//Console.WriteLine("1 => " + number1);
+//Console.WriteLine("2 => " + number2);
+//Console.WriteLine("3 => " + number3);
+//Console.WriteLine("4 => " + number4);
+//Console.WriteLine("5 => " + number5);
+//Console.WriteLine("6 => " + number6);
+//Console.WriteLine("7 => " + number7);
+//Console.WriteLine("8 => " + number8);
+//Console.WriteLine("9 => " + number9);
 
 
 
