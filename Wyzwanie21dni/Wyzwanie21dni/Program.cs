@@ -31,31 +31,26 @@ var resultUser3 = Employee3.Result;
 //Console.WriteLine(resultUser1);
 //Console.WriteLine(resultUser2);
 //Console.WriteLine(resultUser3);
-Console.WriteLine("Największy wynik miał pan/pani");
 
-if (Employee1.Result > Employee2.Result && Employee1.Result > Employee3.Result)
-{
-    Console.WriteLine("Imie " + Employee1.name);
-    Console.WriteLine("Nazwisko " + Employee1.surname);
-    Console.WriteLine("Lat: " + Employee1.wiek);
-    Console.WriteLine(resultUser1);
-}
+List<Employee> employees = new List<Employee> { Employee1, Employee2, Employee3 };
+int maxResult = -1;
+Employee EmployerWithMaxResult = null;
 
-if (Employee2.Result > Employee1.Result && Employee2.Result > Employee3.Result)
-{
-    Console.WriteLine("Imie " + Employee2.name);
-    Console.WriteLine("Nazwisko " + Employee2.surname);
-    Console.WriteLine("Lat: " + Employee2.wiek);
-    Console.WriteLine(resultUser2);
-}
 
-if (Employee3.Result > Employee2.Result && Employee3.Result > Employee1.Result)
+foreach (var employee in employees)
 {
-    Console.WriteLine("Imie " + Employee3.name);
-    Console.WriteLine("Nazwisko " + Employee3.surname);
-    Console.WriteLine("Lat: " + Employee3.wiek);
-    Console.WriteLine(resultUser3);
+    if (employee.Result > maxResult)
+    {
+        EmployerWithMaxResult = employee;
+    }
 }
+Console.WriteLine("Imie " + EmployerWithMaxResult.name);
+Console.WriteLine("Nazwisko " + EmployerWithMaxResult.surname);
+Console.WriteLine("Lat: " + EmployerWithMaxResult.wiek);
+Console.WriteLine(EmployerWithMaxResult.Result);
+
+
+
 
 
 
