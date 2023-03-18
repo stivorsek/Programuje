@@ -1,53 +1,130 @@
 ﻿using Wyzwanie21dni;
 
+
+var employee = new Employee("Damian", "Dzieciol");
+
+employee.AddScore("11");
+employee.AddScore("10");
+employee.AddScore(12);
+employee.AddScore(2);
+var statistics = employee.GetStatistics();
+var statistics1 = employee.GetStatisticsWithForEach();
+var statistics2 = employee.GetStatisticsWithFor(); 
+var statistics3 = employee.GetStatisticsWithWhile();
+
+
+
+Console.WriteLine($"Average: {statistics.Avg:N2}");
+Console.WriteLine($"Min: {statistics1.Min}");
+Console.WriteLine($"Max: {statistics1.Max}");
+
+Console.WriteLine($"Average: {statistics2.Avg:N2}");
+Console.WriteLine($"Min: {statistics2.Min}");
+Console.WriteLine($"Max: {statistics2.Max}");
+
+Console.WriteLine($"Average: {statistics3.Avg:N2}");
+Console.WriteLine($"Min: {statistics3.Min}");
+Console.WriteLine($"Max: {statistics3.Max}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //User user1 = new User("Damian","111");
 //User user2 = new User("Ewa", "111");
 //User user3 = new User("Zuzia", "111");
 //User user4 = new User("Adam", "111");
 //User user5 = new User("Karol", "111");
 //User user6 = new User("Tadeusz", "111");
-Employee Employee1 = new Employee("Damian", "dz", "21");
-Employee Employee2 = new Employee("Damian", "dz", "22");
-Employee Employee3 = new Employee("Damian", "dz", "33");
-Employee1.AddScore(5);
-Employee1.AddScore(2);
-Employee1.AddScore(3);
-Employee1.AddScore(4);
-Employee1.AddScore(5);
-Employee2.AddScore(5);
-Employee2.AddScore(1);
-Employee2.AddScore(2);
-Employee2.AddScore(1);
-Employee2.AddScore(1);
-Employee3.AddScore(2);
-Employee3.AddScore(2);
-Employee3.AddScore(2);
-Employee3.AddScore(2);
-Employee3.AddScore(7);
+//Employee Employee1 = new Employee("Damian", "dz");
+//Employee Employee2 = new Employee("Damian", "dz");
+//Employee Employee3 = new Employee("Damian", "dz");
 
-var resultUser1 = Employee1.Result;
-var resultUser2 = Employee2.Result;
-var resultUser3 = Employee3.Result;
+//Employee1.AddScore(5);
+//Employee1.AddScore(2);
+//Employee1.AddScore(3);
+//Employee1.AddScore(4);
+//Employee1.AddScore(5);
+
+//Employee2.AddScore(5);
+//Employee2.AddScore(1);
+//Employee2.AddScore(2);
+//Employee2.AddScore(1);
+//Employee2.AddScore(1);
+
+//Employee3.AddScore(2);
+//Employee3.AddScore(2);
+//Employee3.AddScore(2);
+//Employee3.AddScore(2);
+//Employee3.AddScore(7);
+
+//var resultUser1 = Employee1.Result;
+//var resultUser2 = Employee2.Result;
+//var resultUser3 = Employee3.Result;
 //Console.WriteLine(resultUser1);
 //Console.WriteLine(resultUser2);
 //Console.WriteLine(resultUser3);
 
-List<Employee> employees = new List<Employee> { Employee1, Employee2, Employee3 };
-int maxResult = -1;
-Employee EmployerWithMaxResult = null;
+//List<Employee> employees = new List<Employee> { Employee1, Employee2, Employee3 };
+//int maxResult = -1;
+//Employee EmployerWithMaxResult = null;
 
 
-foreach (var employee in employees)
-{
-    if (employee.Result > maxResult)
-    {
-        EmployerWithMaxResult = employee;
-    }
-}
-Console.WriteLine("Imie " + EmployerWithMaxResult.name);
-Console.WriteLine("Nazwisko " + EmployerWithMaxResult.surname);
-Console.WriteLine("Lat: " + EmployerWithMaxResult.wiek);
-Console.WriteLine(EmployerWithMaxResult.Result);
+//foreach (var employee in employees)
+//{
+//  if (employee.Result > maxResult)
+//   {
+//       EmployerWithMaxResult = employee;
+//    }
+//}
+//Console.WriteLine("Imie " + EmployerWithMaxResult.name);
+//Console.WriteLine("Nazwisko " + EmployerWithMaxResult.surname);
+//Console.WriteLine("Lat: " + EmployerWithMaxResult.wiek);
+//Console.WriteLine(EmployerWithMaxResult.Result);
 
 
 

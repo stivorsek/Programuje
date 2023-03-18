@@ -16,11 +16,11 @@ namespace Wyzwanie21dni.Tests
             Assert.AreEqual(number1, number2);
         }
 
-
         [Test]
         public void TestRefencyjny()
         {
 
+        
             //arrange
             var user1 = new User("Damian", "Haslo");
             var user2 = new User("Damian", "Takie");
