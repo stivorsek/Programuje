@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Runtime.Intrinsics.X86;
 using System.Threading.Tasks.Sources;
 
 namespace Wyzwanie21dni
@@ -8,24 +9,18 @@ namespace Wyzwanie21dni
     {
 
         private List<float> score = new List<float>();
-        public Employee(string name, string surname/*, string wiek*/)
+        public Employee()
+        {
+        }
+        public Employee(string name, string surname)
         {
             this.name = name;
             this.surname = surname;
-            //this.wiek = wiek;
+     
         }
         public string name { get; set; }
         public string surname { get; set; }
-        //public string wiek { get; set; }
 
-        // public float Result
-        // {
-        //     get
-        //     {
-        //         return this.score.Sum();
-        //     }
-        //
-        // }
 
         public void AddScore(float number)
         {
@@ -35,30 +30,42 @@ namespace Wyzwanie21dni
             }
             else
             {
-                Console.WriteLine("Nieprawidlowa Wartosc");
+                Console.WriteLine();
+                Console.WriteLine("Error : Input is biggger then 100 or lower then 0");
+                Console.WriteLine();
             }
         }
-        public Statistics GetStatistics()
+        public void AddScore(char number)
         {
-            var statistics = new Statistics();
-            statistics.Avg = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-
-            var index = 0;
-
-            do
+            switch (number)
             {
-                statistics.Max = Math.Max(statistics.Max, this.score[index]);
-                statistics.Min = Math.Min(statistics.Min, this.score[index]);
-                statistics.Avg += this.score[index];
-                index++;
-            } while (index < this.score.Count);
+                case 'A':
+                case 'a':
+                    this.score.Add(100);
+                    break;
+                case 'B':
+                case 'b':
+                    this.score.Add(80);
+                    break;
+                case 'C':
+                case 'c':
+                    this.score.Add(60);
+                    break;
+                case 'D':
+                case 'd':
+                    this.score.Add(40);
+                    break;
+                case 'E':
+                case 'e':
+                    this.score.Add(20);
+                    break;
+                default:
+                    this.score.Add(0);
+                    break;
+            }
 
-            statistics.Avg /= this.score.Count;
-            return statistics;
         }
-        public Statistics GetStatisticsWithForEach()
+        public Statistics GetStatistics()
         {
             var statistics = new Statistics();
             statistics.Avg = 0;
@@ -70,61 +77,43 @@ namespace Wyzwanie21dni
                 statistics.Max = Math.Max(statistics.Max, score);
                 statistics.Min = Math.Min(statistics.Min, score);
                 statistics.Avg += score;
-
             }
 
             statistics.Avg /= this.score.Count;
-            return statistics;
-        }
-        public Statistics GetStatisticsWithFor()
-        {
-            var statistics = new Statistics();
-            statistics.Avg = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
 
-
-            for (int index = 0; index < this.score.Count; index++)
+            switch (statistics.Avg)
             {
-                statistics.Max = Math.Max(statistics.Max, this.score[index]);
-                statistics.Min = Math.Min(statistics.Min, this.score[index]);
-                statistics.Avg += this.score[index];
-            }
+                case var a when a >= 80:
+                    statistics.AverageLetter = 'A';
+                    break;
 
-            statistics.Avg /= this.score.Count;
+                case var A when A >= 60:
+                    statistics.AverageLetter = 'B';
+                    Console.WriteLine("testr");
+                    break;
+
+                case var Avg when Avg >= 40:
+                    statistics.AverageLetter = 'C';
+                    break;
+
+                case var Avg when Avg >= 20:
+                    statistics.AverageLetter = 'D';
+                    break;
+
+                default:
+                    statistics.AverageLetter = 'E';
+                    break;
+            }
             return statistics;
         }
-        public Statistics GetStatisticsWithWhile()
-        {
-            var statistics = new Statistics();
-            statistics.Avg = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-            var index = 0;
-
-            while (index < this.score.Count)
-            {
-                statistics.Max = Math.Max(statistics.Max, this.score[index]);
-                statistics.Min = Math.Min(statistics.Min, this.score[index]);
-                statistics.Avg += this.score[index];
-
-                index++;
-            }
-
-
-            statistics.Avg /= this.score.Count;
-            return statistics;
-        }
+       
+        
 
         public void AddScore(string number)
         {
             if (float.TryParse(number, out float result))
             {
                 this.AddScore(result);
-            }
-            else
-            {
-                Console.WriteLine("This is not float");
             }
 
         }
