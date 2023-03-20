@@ -9,19 +9,14 @@ namespace Wyzwanie21dni
     {
 
         private List<float> score = new List<float>();
-        public Employee()
-        {
-        }
         public Employee(string name, string surname)
         {
             this.name = name;
             this.surname = surname;
-     
+
         }
         public string name { get; set; }
         public string surname { get; set; }
-
-
         public void AddScore(float number)
         {
             if (number >= 0 && number <= 100)
@@ -30,9 +25,7 @@ namespace Wyzwanie21dni
             }
             else
             {
-                Console.WriteLine();
-                Console.WriteLine("Error : Input is biggger then 100 or lower then 0");
-                Console.WriteLine();
+                throw new Exception("To High score");
             }
         }
         public void AddScore(char number)
@@ -60,9 +53,25 @@ namespace Wyzwanie21dni
                     this.score.Add(20);
                     break;
                 default:
-                    this.score.Add(0);
-                    break;
+                    throw new Exception("Wrong letter");
             }
+
+        }
+        public void AddScore(string number)
+        {
+            if (float.TryParse(number, out float result))
+            {
+                this.AddScore(result);
+            }
+            else
+            {
+                throw new Exception("U can only put a b c d e letters or 0-100 value");
+            }
+
+        }
+        public void AddScore(double number)
+        {
+            float score = (float)number;
 
         }
         public Statistics GetStatistics()
@@ -89,7 +98,6 @@ namespace Wyzwanie21dni
 
                 case var A when A >= 60:
                     statistics.AverageLetter = 'B';
-                    Console.WriteLine("testr");
                     break;
 
                 case var Avg when Avg >= 40:
@@ -100,27 +108,11 @@ namespace Wyzwanie21dni
                     statistics.AverageLetter = 'D';
                     break;
 
-                default:
+                case var Avg when Avg > 0:
                     statistics.AverageLetter = 'E';
                     break;
             }
             return statistics;
-        }
-       
-        
-
-        public void AddScore(string number)
-        {
-            if (float.TryParse(number, out float result))
-            {
-                this.AddScore(result);
-            }
-
-        }
-        public void AddScore(double number)
-        {
-            float score = (float)number;
-
         }
     }
 }
