@@ -5,18 +5,16 @@ using System.Threading.Tasks.Sources;
 
 namespace Wyzwanie21dni
 {
-    public class Employee
+    public class Employee : Person
     {
 
         private List<float> score = new List<float>();
-        public Employee(string name, string surname)
+        public Employee(string name, string surname, char sex)
+            : base(name, surname, sex)
         {
-            this.name = name;
-            this.surname = surname;
 
         }
-        public string name { get; set; }
-        public string surname { get; set; }
+
         public void AddScore(float number)
         {
             if (number >= 0 && number <= 100)
