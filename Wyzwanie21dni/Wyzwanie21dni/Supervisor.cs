@@ -1,10 +1,12 @@
-﻿namespace Wyzwanie21dni
+﻿
+namespace Wyzwanie21dni
 {
-    public class Employee : IEmployee
+    public class Supervisor : IEmployee
     {
+        
 
         private List<float> score = new List<float>();
-        public Employee(string name, string surname /*char sex*/)
+        public Supervisor(string name, string surname /*char sex*/)
         /*: base(name, surname, sex)*/
         {
             this.name = name;
@@ -55,20 +57,53 @@
         }
         public void AddScore(string number)
         {
-            if (float.TryParse(number, out float result))
+            switch (number)
             {
-                this.AddScore(result);
+                case "6":
+                    this.score.Add(100);
+                    break;
+                case "+5":
+                    this.score.Add(90);
+                    break;
+                case "5":
+                    this.score.Add(80);
+                    break;
+                case "-5":
+                    this.score.Add(70);
+                    break;
+                case "+4":
+                    this.score.Add(65);
+                    break;
+                case "4":
+                    this.score.Add(60);
+                    break;
+                case "-4":
+                    this.score.Add(55);
+                    break;
+                case "+3":
+                    this.score.Add(50);
+                    break;
+                case "3":
+                    this.score.Add(45);
+                    break;
+                case "-3":
+                    this.score.Add(40);
+                    break;
+                case "+2":
+                    this.score.Add(35);
+                    break;
+                case "2":
+                    this.score.Add(30);
+                    break;
+                case "-2":
+                    this.score.Add(25);
+                    break;
+                case "1":
+                    this.score.Add(0);
+                    break;
+                default:
+                    throw new Exception("Wrong letter");
             }
-            else if (char.TryParse(number, out char resol))
-            {
-                this.AddScore(resol);
-
-            }
-            else
-            {
-                throw new Exception("U can only put a b c d e letters or 0-100 value");
-            }
-
         }
         public void AddScore(double number)
         {
