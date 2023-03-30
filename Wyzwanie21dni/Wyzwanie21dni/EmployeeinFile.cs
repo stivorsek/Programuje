@@ -3,9 +3,8 @@
     internal class EmployeeinFile : EmployeeBase
     {
 
-        public delegate void ScoreAddedDelegate(object sender, EventArgs args);
 
-        public event ScoreAddedDelegate ScoreAdded;
+        public override event ScoreAddedDelegate ScoreAdded;
 
         private const string FileName = "Grades.txt";
         public EmployeeinFile(string name, string surname) 
@@ -88,10 +87,6 @@
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
-            statistics.Avg = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-            var count = 1;
             if (File.Exists(FileName))
             {
 
@@ -101,38 +96,12 @@
                     while (line != null)
                     {
                         var number = float.Parse(line);
-                        statistics.Max = Math.Max(statistics.Max, number);
-                        statistics.Min = Math.Min(statistics.Min, number);
-                        statistics.Avg += number;
-                        count++;
+                        statistics.AddScore(number);
                         line = reader.ReadLine();
                     }
 
                 }
             }
-
-                statistics.Avg /= count;
-                switch (statistics.Avg)
-                {
-                 case var a when a >= 80:
-                 statistics.AverageLetter = 'A';  
-                    break;
-                 case var A when A >= 60:
-                 statistics.AverageLetter = 'B';
-                    break;
-                 case var Avg when Avg >= 40:
-                 statistics.AverageLetter = 'C';
-                    break;
-                 case var Avg when Avg >= 20:  
-                 statistics.AverageLetter = 'D';
-                    break;
-                 case var Avg when Avg > 0:
-                 statistics.AverageLetter = 'E';
-                    break;
-                    }
-                    
-                
-            
                 return statistics;
         }
     }

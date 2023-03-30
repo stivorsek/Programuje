@@ -1,4 +1,6 @@
-﻿namespace Wyzwanie21dni
+﻿using static Wyzwanie21dni.EmployeeBase;
+
+namespace Wyzwanie21dni
 {
     public interface IEmployee
     {
@@ -13,6 +15,7 @@
 
         void AddScore(char number);
 
+        event ScoreAddedDelegate ScoreAdded;
         Statistics GetStatistics();
 
     }
