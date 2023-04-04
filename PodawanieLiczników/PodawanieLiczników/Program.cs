@@ -2,12 +2,8 @@
 using System.ComponentModel;
 
 Console.WriteLine("Witaj w programie do przeliczania opłat za wodę, gaz oraz prąd");
-Console.WriteLine("Poniżej wpisz swoje imie");
-var imie = Console.ReadLine();
-Console.WriteLine("Poniżej wpisz swoje nazwisko");
-var nazwisko = Console.ReadLine();
 
-var occupant = new Occupant(imie, nazwisko);
+var occupant = new Occupant("test", "test");
 while (true)
 {
     Console.WriteLine("");
@@ -32,6 +28,8 @@ while (true)
         Console.WriteLine($"Error:{e.Message}");
     }
 }
-
-
+Console.WriteLine("");
+Console.WriteLine($"Proszę zapłacić {occupant.GasSum} zł za gaz");
+Console.WriteLine($"Proszę zapłacić {occupant.WodaSum} zł za wode");
+Console.WriteLine($"Proszę zapłacić {occupant.PradSum} zł za prad");
 
