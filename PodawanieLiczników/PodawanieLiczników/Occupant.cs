@@ -6,14 +6,14 @@
         public string imie { get; private set; }
 
         public float gasCost { get; private set; }
-        public float watterCost { get; private set; }
+        public float waterCost { get; private set; }
         public float electricityCost { get; private set; }
         public Occupant(string imie, string nazwisko)
         {
             this.imie = imie;
             this.nazwisko = nazwisko;
             this.gasCost = 0;
-            this.watterCost = 0;
+            this.waterCost = 0;
             this.electricityCost = 0;
             
         }
@@ -33,7 +33,7 @@
                     Console.WriteLine("Poniżej podaj nicznik wody:");
                     var aqua = Console.ReadLine();
                     float.TryParse(aqua, out float aquaNumber);
-                    this.GetMediaWatter(aquaNumber);
+                    this.GetMediaWater(aquaNumber);
                     break;
 
                 case '3':
@@ -67,12 +67,12 @@
             this.gasCost = newGasCalculate.gasCost;
             return newReadingGas;
         }
-        public Watter GetMediaWatter(float watter)
+        public Water GetMediaWater(float water)
         {
-            var newReadingWatter = new Watter(watter);
-            var newWatterCalculate = newReadingWatter.GetAquaCost();
-            this.watterCost = newWatterCalculate.watterCost;
-            return newReadingWatter;
+            var newReadingWater = new Water(water);
+            var newWaterCalculate = newReadingWater.GetAquaCost();
+            this.waterCost = newWaterCalculate.waterCost;
+            return newReadingWater;
         }
 
         public Electricity GetMediaPrad(float electricity)
