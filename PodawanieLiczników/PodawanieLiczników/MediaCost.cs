@@ -2,30 +2,30 @@
 {
     public class MediaCost
     {
-        public float GasCost { get; set; }
-        public float PradCost { get; set; }
-        public float WodaCost { get; set; }
+        public float gasCost { get; set; }
+        public float pradCost { get; set; }
+        public float wodaCost { get; set; }
         public MediaCost()
         {
-            this.WodaCost = 0;
-            this.GasCost = 0;
-            this.PradCost = 0;
+            this.wodaCost = 0;
+            this.gasCost = 0;
+            this.pradCost = 0;
         }
-        public void WodaCallculate(float WodaDiff)
+        public void WodaCallculate(float wodaDiff)
         {
-            WodaDiff = (float)(WodaDiff * 13.67);
-            this.WodaCost = WodaDiff;
+            wodaDiff = (float)(wodaDiff * 13.67);
+            this.wodaCost = wodaDiff;
         }
-        public void GasCallculate(float GasDiff)
+        public void GasCallculate(float gasDiff)
         {
-             GasDiff = (float)(GasDiff * 3.67);
-             this.GasCost = GasDiff;
+             gasDiff = (float)(gasDiff * 3.67);
+             this.gasCost = gasDiff;
         }
 
-        public void PradCallculate(float PradDiff)
+        public void PradCallculate(float pradDiff)
         {
-            PradDiff = (float)(PradDiff * 1.67);
-            this.PradCost = PradDiff;
+            pradDiff = (float)(pradDiff * 1.67);
+            this.pradCost = pradDiff;
         }
 
     }

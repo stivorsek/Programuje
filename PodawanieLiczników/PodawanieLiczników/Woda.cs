@@ -3,7 +3,7 @@
     public class Woda : Media
     {
         public const string FileName = "ListaWody.txt";
-        public float WodaDiff { get; set; }
+        public float wodaDiff { get; set; }
 
         private List<float> WodaList = new List<float>();
         public Woda(float Licznik)
@@ -16,7 +16,7 @@
                 if (Licznik > OstatniWpis)
                 {
                     writer.WriteLine(Licznik);
-                    this.WodaDiff = Licznik - OstatniWpis;
+                    this.wodaDiff = Licznik - OstatniWpis;
                     GetMediaCost();
                 }
                 else
@@ -47,7 +47,7 @@
         public MediaCost GetMediaCost()
         {
             var MediaCost = new MediaCost();
-            MediaCost.WodaCallculate(WodaDiff);
+            MediaCost.WodaCallculate(wodaDiff);
             return MediaCost;
         }
     }

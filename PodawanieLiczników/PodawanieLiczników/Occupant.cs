@@ -5,16 +5,16 @@
         public string nazwisko { get; private set; }
         public string imie { get; private set; }
 
-        public float GasSum { get; private set; }
-        public float WodaSum { get; private set; }
-        public float PradSum { get; private set; }
+        public float gasSum { get; private set; }
+        public float wodaSum { get; private set; }
+        public float pradSum { get; private set; }
         public Occupant(string imie, string nazwisko)
         {
             this.imie = imie;
             this.nazwisko = nazwisko;
-            this.GasSum = 0;
-            this.WodaSum = 0;
-            this.PradSum = 0;
+            this.gasSum = 0;
+            this.wodaSum = 0;
+            this.pradSum = 0;
             
         }
 
@@ -49,9 +49,9 @@
             }
 
         }
-        public void ChoseMedia(string Media)
+        public void ChoseMedia(string media)
         {
-            if (char.TryParse(Media, out char mediaNumber))
+            if (char.TryParse(media, out char mediaNumber))
             {
                 this.ChoseMedia(mediaNumber);
             }
@@ -62,28 +62,28 @@
         }
         public Gas GetMediaGas(float Gas)
         {
-            var WynikGazu = new Gas(Gas);
-            var DaneGazu = WynikGazu.GetGasConst();
-            this.GasSum = DaneGazu.GasCost;
-            WynikGazu.GetGasConst();
-            return WynikGazu;
+            var wynikGazu = new Gas(Gas);
+            var daneGazu = wynikGazu.GetGasConst();
+            this.gasSum = daneGazu.gasCost;
+            wynikGazu.GetGasConst();
+            return wynikGazu;
         }
         public Woda GetMediaAqua(float aqua)
         {
-            var WynikWody = new Woda(aqua);
-            var DaneWody = WynikWody.GetMediaCost();
-            this.WodaSum = DaneWody.WodaCost;
-            WynikWody.GetMediaCost();
-            return WynikWody;
+            var wynikWody = new Woda(aqua);
+            var daneWody = wynikWody.GetMediaCost();
+            this.wodaSum = daneWody.wodaCost;
+            wynikWody.GetMediaCost();
+            return wynikWody;
         }
 
         public Prad GetMediaPrad(float electricity)
         {
-            var WynikPradu = new Prad(electricity);
-            var DanePradu = WynikPradu.GetMediaCost();
-            this.PradSum = DanePradu.PradCost;
-            WynikPradu.GetMediaCost();
-            return WynikPradu;
+            var wynikPradu = new Prad(electricity);
+            var danePradu = wynikPradu.GetMediaCost();
+            this.pradSum = danePradu.pradCost;
+            wynikPradu.GetMediaCost();
+            return wynikPradu;
 
         }
   

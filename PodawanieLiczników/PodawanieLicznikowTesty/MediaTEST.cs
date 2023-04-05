@@ -12,7 +12,7 @@ namespace PodawanieLicznikowTesty
             var TestowyUzytkownik = new Occupant("Damian", "Dzieciol");
             float testAquaONE = 10002;
             TestowyUzytkownik.GetMediaAqua(testAquaONE);
-            float testAquaTWO = TestowyUzytkownik.WodaSum;
+            float testAquaTWO = TestowyUzytkownik.wodaSum;
             float x = (float)(1 * 13.67);
             Assert.AreEqual(testAquaTWO, x);
 
@@ -24,7 +24,7 @@ namespace PodawanieLicznikowTesty
             var TestowyUzytkownik = new Occupant("Damian", "Dzieciol");
             float testGasONE = 10002;
             TestowyUzytkownik.GetMediaGas(testGasONE);
-            float testGasTWO = TestowyUzytkownik.GasSum;
+            float testGasTWO = TestowyUzytkownik.gasSum;
             float y = (float)(1 * 3.67);
 
             Assert.AreEqual(testGasTWO, y);
@@ -38,7 +38,7 @@ namespace PodawanieLicznikowTesty
             var TestowyUzytkownik = new Occupant("Damian", "Dzieciol");
             float testElectricityONE = 10002;
             TestowyUzytkownik.GetMediaPrad(testElectricityONE);
-            float testElectricityTWO = TestowyUzytkownik.PradSum;
+            float testElectricityTWO = TestowyUzytkownik.pradSum;
             float z = (float)(1 * 1.67);
 
             Assert.AreEqual(testElectricityTWO, z);

@@ -3,7 +3,7 @@
     public class Prad : Media
     {
         public const string FileName = "ListaPradu.txt";
-        public float PradDiff { get; set; }
+        public float pradDiff { get; set; }
 
         private List<float> PradList = new List<float>();
         public Prad(float Licznik)
@@ -16,7 +16,7 @@
                 if (Licznik > OstatniWpis)
                 {
                     writer.WriteLine(Licznik);
-                    this.PradDiff = Licznik - OstatniWpis;
+                    this.pradDiff = Licznik - OstatniWpis;
                     GetMediaCost();
                 }
                 else
@@ -47,7 +47,7 @@
         public MediaCost GetMediaCost()
         {
             var MediaCost = new MediaCost();
-            MediaCost.PradCallculate(PradDiff);
+            MediaCost.PradCallculate(pradDiff);
             return MediaCost;
         }
     }

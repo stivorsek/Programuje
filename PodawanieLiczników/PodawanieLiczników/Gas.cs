@@ -3,7 +3,7 @@
     public class Gas : Media
     {
         public const string FileName = "ListaGazu.txt";
-        public float GasDiff { get; set; }
+        public float gasDiff { get; set; }
 
         private List<float> GasList = new List<float>();
         public Gas(float Licznik)
@@ -15,7 +15,7 @@
                     if (Licznik > OstatniWpis)
                     {
                         writer.WriteLine(Licznik);
-                        this.GasDiff = Licznik - OstatniWpis;
+                        this.gasDiff = Licznik - OstatniWpis;
                         GetGasConst();
                     }
                     else
@@ -44,7 +44,7 @@
         public MediaCost GetGasConst()
         {
             var GasConst = new MediaCost();
-            GasConst.GasCallculate(GasDiff);
+            GasConst.GasCallculate(gasDiff);
             return GasConst;
             
         }
