@@ -5,13 +5,13 @@
         public const string FileName = "ListaGazu.txt";
         public float gasDiff { get; set; }
 
-        private List<float> GasList = new List<float>();
+        private List<float> gasList = new List<float>();
         public Gas(float Licznik)
         {
                 MediaReader(Licznik);
                 using (var writer = File.AppendText(FileName))
                 {
-                    var OstatniWpis = GasList.Last();
+                    var OstatniWpis = gasList.Last();
                     if (Licznik > OstatniWpis)
                     {
                         writer.WriteLine(Licznik);
@@ -36,7 +36,7 @@
                 while (line != null)
                 {
                     var nextLine = float.Parse(line);
-                    GasList.Add(nextLine);
+                    gasList.Add(nextLine);
                     line = reader.ReadLine();
                 }
             }
