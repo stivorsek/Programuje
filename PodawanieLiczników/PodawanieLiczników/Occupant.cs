@@ -25,22 +25,19 @@
                 case '1':
                     Console.WriteLine("Poniżej podaj nicznik gazu:");
                     var gas = Console.ReadLine();
-                    float.TryParse(gas, out float gasNumber);
-                    this.GetMediaGas(gasNumber);
+                    AddGasCount(gas);
                     break;
 
                 case '2':
                     Console.WriteLine("Poniżej podaj nicznik wody:");
-                    var aqua = Console.ReadLine();
-                    float.TryParse(aqua, out float aquaNumber);
-                    this.GetMediaWater(aquaNumber);
+                    var watter = Console.ReadLine();
+                    AddWaterCount(watter);
                     break;
 
                 case '3':
                     Console.WriteLine("Poniżej podaj nicznik prądu:");
                     var electricity = Console.ReadLine();
-                    float.TryParse(electricity, out float electricityNumber);
-                    this.GetMediaPrad(electricityNumber);
+                    AddElectricityCount(electricity);
                     break;
                 default:
                     throw new Exception("Wybrano zły numer proszę wybrać jeden z podany: 1 2 lub 3");
@@ -75,7 +72,7 @@
             return newReadingWater;
         }
 
-        public Electricity GetMediaPrad(float electricity)
+        public Electricity GetMediaElectricity(float electricity)
         {
             var newReadingElectricity = new Electricity(electricity);
             var newElectricityCalculate = newReadingElectricity.GetElectricityCost();
@@ -83,8 +80,40 @@
             return newReadingElectricity;
 
         }
-  
 
+        public void AddGasCount(string Count)
+        {
+            if (float.TryParse(Count, out float CountInFloat))
+            {
+                this.GetMediaGas(CountInFloat);
+            }
+            else
+            {
+                throw new Exception("Podany licznik nie jest podany w zły formacie, spróbuj ponownie");
+            }
+        }
+        public void AddWaterCount(string Count)
+        {
+            if (float.TryParse(Count, out float CountInFloat))
+            {
+                this.GetMediaWater(CountInFloat);
+            }
+            else
+            {
+                throw new Exception("Podany licznik nie jest podany w zły formacie, spróbuj ponownie");
+            }
+        }
+        public void AddElectricityCount(string Count)
+        {
+            if (float.TryParse(Count, out float CountInFloat))
+            {
+                this.GetMediaElectricity(CountInFloat);
+            }
+            else
+            {
+                throw new Exception("Podany licznik nie jest podany w zły formacie, spróbuj ponownie");
+            }
+        }
 
     }
 }
