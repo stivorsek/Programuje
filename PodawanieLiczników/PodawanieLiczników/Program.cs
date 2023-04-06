@@ -29,7 +29,7 @@ while (true)
     }
 }
 Console.WriteLine("");
-Console.WriteLine($"Proszę zapłacić {occupant.gasCost} zł za gaz");
-Console.WriteLine($"Proszę zapłacić {occupant.watterCost} zł za wode");
-Console.WriteLine($"Proszę zapłacić {occupant.electricityCost} zł za prad");
+Console.WriteLine($"Proszę zapłacić {occupant.gasBill} zł za gaz");
+Console.WriteLine($"Proszę zapłacić {occupant.waterBill} zł za wode");
+Console.WriteLine($"Proszę zapłacić {occupant.electricityBill} zł za prad");
 

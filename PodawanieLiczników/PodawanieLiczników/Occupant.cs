@@ -5,16 +5,16 @@
         public string nazwisko { get; private set; }
         public string imie { get; private set; }
 
-        public float gasCost { get; private set; }
-        public float waterCost { get; private set; }
-        public float electricityCost { get; private set; }
+        public float gasBill { get; private set; }
+        public float waterBill { get; private set; }
+        public float electricityBill { get; private set; }
         public Occupant(string imie, string nazwisko)
         {
             this.imie = imie;
             this.nazwisko = nazwisko;
-            this.gasCost = 0;
-            this.waterCost = 0;
-            this.electricityCost = 0;
+            this.gasBill = 0;
+            this.waterBill = 0;
+            this.electricityBill = 0;
             
         }
 
@@ -57,27 +57,27 @@
                 throw new Exception("Podana wartość nie jest cyfrą proszę spróbować jeszcze raz");
             }
         }
-        public Gas GetMediaGas(float Gas)
+        public GasMeter GetMediaGas(float Gas)
         {
-            var newReadingGas = new Gas(Gas);
-            var newGasCalculate = newReadingGas.GetGasConst();
-            this.gasCost = newGasCalculate.gasCost;
-            return newReadingGas;
+            var newReadingGasMeter = new GasMeter(Gas);
+            var newGasCostCalculate = newReadingGasMeter.GetGasConst();
+            this.gasBill = newGasCostCalculate.gasCost;
+            return newReadingGasMeter;
         }
         public Water GetMediaWater(float water)
         {
-            var newReadingWater = new Water(water);
-            var newWaterCalculate = newReadingWater.GetAquaCost();
-            this.waterCost = newWaterCalculate.waterCost;
-            return newReadingWater;
+            var newReadingWaterMeter = new Water(water);
+            var newWaterCostCalculate = newReadingWaterMeter.GetAquaCost();
+            this.waterBill = newWaterCostCalculate.waterCost;
+            return newReadingWaterMeter;
         }
 
-        public Electricity GetMediaElectricity(float electricity)
+        public ElectricityMeter GetMediaElectricity(float electricity)
         {
-            var newReadingElectricity = new Electricity(electricity);
-            var newElectricityCalculate = newReadingElectricity.GetElectricityCost();
-            this.electricityCost = newElectricityCalculate.pradCost;
-            return newReadingElectricity;
+            var newReadingElectricityMeter = new ElectricityMeter(electricity);
+            var newElectricityCostCalculate = newReadingElectricityMeter.GetElectricityCost();
+            this.electricityBill = newElectricityCostCalculate.pradCost;
+            return newReadingElectricityMeter;
 
         }
 
